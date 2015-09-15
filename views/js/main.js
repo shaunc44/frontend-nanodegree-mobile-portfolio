@@ -5,7 +5,6 @@ jank-free at 60 frames per second.
 There are two major issues in this code that lead to sub-60fps performance. Can
 you spot and fix both?
 
-
 Built into the code, you'll find a few instances of the User Timing API
 (window.performance), which will be console.log()ing frame rate data into the
 browser console. To learn more about User Timing API, check out:
@@ -18,6 +17,7 @@ cameron *at* udacity *dot* com
 
 // As you may have realized, this website randomly generates pizzas.
 // Here are arrays of all possible pizza ingredients.
+
 var pizzaIngredients = {};
 pizzaIngredients.meats = [
   "Pepperoni",
@@ -38,6 +38,7 @@ pizzaIngredients.meats = [
   "Anchovies",
   "Turkey",
   "Ham",
+  "Bison",
   "Venison",
   "Lamb",
   "Duck",
@@ -132,6 +133,7 @@ pizzaIngredients.sauces = [
   "Red Sauce",
   "Marinara",
   "BBQ Sauce",
+  "Pesto",
   "No Sauce",
   "Hot Sauce"
 ];
@@ -139,6 +141,7 @@ pizzaIngredients.crusts = [
   "White Crust",
   "Whole Wheat Crust",
   "Flatbread Crust",
+  "Gluten-Free",
   "Stuffed Crust"
 ];
 
@@ -502,7 +505,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('.mover');//?????????????
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
@@ -523,14 +526,14 @@ window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
-  var cols = 8;
+  var cols = 6;
   var s = 256;
-  for (var i = 0; i < 200; i++) {
+  for (var i = 0; i < 18; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
-    elem.style.width = "73.333px";
+    elem.style.width = "90px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
