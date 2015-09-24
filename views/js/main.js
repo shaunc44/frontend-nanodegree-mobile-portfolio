@@ -415,6 +415,9 @@ var resizePizzas = function(size) {
       case "3":
         document.querySelector("#pizzaSize").innerHTML = "Large";
         return;
+      case "4":
+        document.querySelector("#pizzaSize").innerHTML = "Extra Large";
+        return;
       default:
         console.log("bug in changeSliderLabel");
     }
@@ -428,15 +431,17 @@ var resizePizzas = function(size) {
     var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
     var oldsize = oldwidth / windowwidth;
 
-    // TODO: change to 3 sizes? no more xl?
+    // Add XL feature (case 4), by changing percent widths
     // Changes the slider value to a percent width
     function sizeSwitcher (size) {
       switch(size) {
         case "1":
-          return 0.25;
+          return 0.25;//.25
         case "2":
-          return 0.3333;
+          return 0.3;//.3333
         case "3":
+          return 0.38;//.5
+        case "4":
           return 0.5;
         default:
           console.log("bug in sizeSwitcher");
@@ -512,7 +517,6 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-// Change querySelectorAll to getElementsByClassName
 // Change items.length < 5 to i < 5
   var items = document.querySelectorAll('.mover');
   for (var i = 0; i < items.length; i++) {
