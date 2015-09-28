@@ -1,19 +1,14 @@
 /*
-Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run
-jank-free at 60 frames per second.
+Welcome to the 60fps project! Your goal is to make Cam's Pizzeria website run jank-free at 60 frames per second.
 
-There are two major issues in this code that lead to sub-60fps performance. Can
-you spot and fix both?
-
+There are two major issues in this code that lead to sub-60fps performance. Can you spot and fix both?
 
 Built into the code, you'll find a few instances of the User Timing API
 (window.performance), which will be console.log()ing frame rate data into the
 browser console. To learn more about User Timing API, check out:
 http://www.html5rocks.com/en/tutorials/webperformance/usertiming/
 
-Creator:
-Cameron Pittman, Udacity Course Developer
-cameron *at* udacity *dot* com
+Creator: Cameron Pittman, Udacity Course Developer, cameron *at* udacity *dot* com
 */
 
 // As you may have realized, this website randomly generates pizzas.
@@ -404,6 +399,7 @@ var resizePizzas = function(size) {
   window.performance.mark("mark_start_resize");   // User Timing API function
 
   // Changes the value for the size of the pizza above the slider
+  // Add Extra Large case
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
@@ -436,11 +432,11 @@ var resizePizzas = function(size) {
     function sizeSwitcher (size) {
       switch(size) {
         case "1":
-          return 0.25;//.25
+          return 0.25;
         case "2":
-          return 0.3;//.3333
+          return 0.3;
         case "3":
-          return 0.38;//.5
+          return 0.38;
         case "4":
           return 0.5;
         default:
@@ -453,7 +449,6 @@ var resizePizzas = function(size) {
 
     return dx;
   }
-
 
 // Iterates through pizza elements on the page and changes their widths 
   function changePizzaSizes(size) {
@@ -469,7 +464,6 @@ var resizePizzas = function(size) {
   }
 
   changePizzaSizes(size);
-
 
   // User Timing API is awesome
   window.performance.mark("mark_end_resize");
@@ -541,6 +535,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  // Reduce number of pizzas rendered to match actual pizzas on screen (i < 32)
   for (var i = 0; i < 32; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
