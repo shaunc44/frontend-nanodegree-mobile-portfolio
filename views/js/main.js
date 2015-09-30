@@ -424,7 +424,7 @@ var resizePizzas = function(size) {
   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
   function determineDx (elem, size) {
     var oldwidth = elem.offsetWidth;
-    var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
+    var windowwidth = document.getElementById("randomPizzas").offsetWidth;
     var oldsize = oldwidth / windowwidth;
 
     // Add XL feature (case 4), by changing percent widths
@@ -512,7 +512,7 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
 // Change items.length < 5 to i < 5
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName("mover");
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
   // Reduce number of pizzas rendered to match actual pizzas on screen (i < 32)
-  for (var i = 0; i < 32; i++) {
+  for (var i = 0; i < 48; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
