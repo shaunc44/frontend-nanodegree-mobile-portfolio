@@ -1,10 +1,10 @@
 ##**WEBSITE PERFORMANCE OPTIMIZATION**
 ###*UDACITY - FRONTEND NANODEGREE - PROJECT 4*
 In this project I optimized a sample online portfolio for speed by 
-optimizing the critical rendering path and making the pages render 
+improving the critical rendering path and making the pages render 
 as quickly as possible. index.html achieved a PageSpeed score of 
 93-mobile and 94-desktop. pizza.html has a frame rate higher than 
-60 fps. And the time it takes to resize pizzas is now less than 5 ms.
+60 fps. Lastly, the time it takes to resize pizzas is now less than 5 ms.
 
 ---------------------------------------------------------------------
 ####INSTRUCTIONS
