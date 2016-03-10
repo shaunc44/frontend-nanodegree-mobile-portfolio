@@ -1,4 +1,4 @@
-##WEBSITE PERFORMANCE OPTIMIZATION
+##**WEBSITE PERFORMANCE OPTIMIZATION**
 ###*UDACITY - FRONTEND NANODEGREE - PROJECT 4*
 In this project I optimized a sample online portfolio for speed by 
 optimizing the critical rendering path and making the pages render 
@@ -8,6 +8,7 @@ as quickly as possible. index.html achieved a PageSpeed score of
 
 ---------------------------------------------------------------------
 ####INSTRUCTIONS
+---------------------------------------------------------------------
 #####*PAGESPEED:*
 	To view the PageSpeed score please go to [PageSpeed Insights]
 	(https://developers.google.com/speed/pagespeed/insights/) and 
